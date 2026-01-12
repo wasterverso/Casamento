@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <meta name="referrer" content="always">
+    <meta name="referrer" content="no-referrer">
     
     <meta name="color-scheme" content="light only">
     <meta name="supported-color-schemes" content="light">
@@ -13,25 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* Reset e Otimização para iOS */
         * { 
             -webkit-font-smoothing: antialiased; 
-            -moz-osx-font-smoothing: grayscale; 
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
-        }
-
-        html {
-            background-color: #fdfdfd;
-            margin: 0; padding: 0; height: 100%;
         }
 
         body {
             margin: 0; padding: 0;
             font-family: 'Montserrat', sans-serif;
             color: #333333;
-            /* NOVOS LINKS DAS FLORES */
-            background-image: url('https://i.postimg.cc/QCPLG3NQ/Flor_1.png'), url('https://i.postimg.cc/90S35hXZ/Flor_2.png'); 
+            /* BUSCANDO DA SUA PASTA IMAGENS */
+            background-image: url('imagens/Flor_1.png'), url('imagens/Flor_2.png'); 
             background-position: top left, bottom right;
             background-repeat: no-repeat;
             background-size: 150px;
@@ -42,7 +35,6 @@
             background-color: #fdfdfd;
         }
 
-        /* PÉTALAS */
         .petala {
             position: fixed; 
             top: -50px;
@@ -120,7 +112,6 @@
             align-items: center;
             width: 100px; 
             text-decoration: none; 
-            cursor: pointer; 
             background: none; 
             border: none;
             padding: 0;
@@ -141,7 +132,6 @@
             letter-spacing: 1px;
         }
 
-        /* MODAL PIX */
         .modal {
             display: none; 
             position: fixed; 
@@ -162,34 +152,19 @@
             max-width: 380px;
             text-align: center; 
             position: relative;
-            max-height: 85vh; 
-            overflow-y: auto;
         }
 
         .qr-code-pix {
             width: 180px; 
             height: auto;
             margin: 15px auto; 
-            border: 1px solid #eee;
-            padding: 10px; 
-            border-radius: 10px;
             display: block;
-        }
-
-        .fechar-modal {
-            position: absolute; 
-            right: 15px; 
-            top: 10px;
-            font-size: 28px; 
-            cursor: pointer; 
-            color: #999;
         }
 
         @media (max-width: 600px) {
             .container { margin: 15px; }
             h1 { font-size: 2.8rem; word-spacing: 20px; }
             .item-botao img { width: 65px; }
-            body { background-size: 100px; }
         }
     </style>
 </head>
@@ -222,7 +197,7 @@
 
 <div class="container">
     <div class="foto-wrapper">
-        <img src="https://i.postimg.cc/cCjqyS1f/Pictures_1.png" alt="Walter e Arija" class="imagem-topo">
+        <img src="imagens/Pictures_1.png" alt="Walter e Arija" class="imagem-topo">
     </div>
     
     <h1>Walter & Arija</h1>
@@ -241,17 +216,17 @@
 
     <div class="botoes-lado-a-lado">
         <a href="https://wa.me/556793251334" target="_blank" class="item-botao">
-            <img src="https://i.postimg.cc/4yMCkg49/Whatsapp_btn.png" alt="WhatsApp">
+            <img src="imagens/Whatsapp_btn.png" alt="WhatsApp">
             <span class="legenda">Confirmar Presença</span>
         </a>
 
         <button onclick="abrirModal()" class="item-botao">
-            <img src="https://i.postimg.cc/d3DMx1F6/Lista_de_Presentes.png" alt="Presentes">
+            <img src="imagens/Lista_de_Presentes.png" alt="Presentes">
             <span class="legenda">Sugestão de Presentes</span>
         </button>
 
-        <a href="https://www.google.com/maps/search/?api=1&query=MS+384+Km+04+Chácara+Pedacinho+do+Céu" target="_blank" class="item-botao">
-            <img src="https://i.postimg.cc/SR50FhQz/Mapa_btn.png" alt="Mapa">
+        <a href="https://www.google.com/maps/search/?api=1&query=MS+384+Km+04+Chacara+Pedacinho+do+Ceu" target="_blank" class="item-botao">
+            <img src="imagens/Mapa_btn.png" alt="Mapa">
             <span class="legenda">Como Chegar</span>
         </a>
     </div>
@@ -261,23 +236,16 @@
 
 <div id="modalPix" class="modal">
     <div class="modal-content">
-        <span class="fechar-modal" onclick="fecharModal()">×</span>
-        <h2 style="font-family: 'Great Vibes'; color: #ADD8E6; font-size: 2.2rem; margin-bottom: 10px;">Sugestões de presentes</h2>
-        
-        <p style="font-size: 0.85rem; line-height: 1.5; color: #555; margin-bottom: 10px;">
-            Dividir esses momentos com vocês é o que mais desejamos. Não fizemos lista de presentes, mas caso queira nos agraciar com algum presente sugerimos uma contribuição através do PIX.
-        </p>
+        <span onclick="fecharModal()" style="position:absolute; right:15px; top:10px; cursor:pointer; font-size:24px;">&times;</span>
+        <h2 style="font-family: 'Great Vibes'; color: #ADD8E6; font-size: 2.2rem;">Sugestões de presentes</h2>
+        <p style="font-size: 0.85rem; color: #555;">Sugerimos uma contribuição através do PIX.</p>
 
-        <img src="https://i.postimg.cc/BbtWV63g/Pix.png" alt="QR Code Pix" class="qr-code-pix">
+        <img src="imagens/Pix.png" alt="QR Code Pix" class="qr-code-pix">
         
         <div style="background: #f9f9f9; padding: 12px; border-radius: 10px; border: 1px dashed #ADD8E6;">
-            <p style="font-weight: bold; margin-bottom: 5px; font-size: 0.75rem; color: #888;">CHAVE PIX (E-MAIL):</p>
-            <p style="color: #005f73; font-weight: bold; font-size: 0.95rem; word-break: break-all;">waltergabrielmaster@gmail.com</p>
+            <p style="font-weight: bold; font-size: 0.75rem; color: #888;">CHAVE PIX (E-MAIL):</p>
+            <p style="color: #005f73; font-weight: bold; font-size: 0.95rem;">waltergabrielmaster@gmail.com</p>
         </div>
-
-        <button onclick="fecharModal()" style="margin-top: 20px; background: #ADD8E6; color: white; border: none; padding: 10px 25px; border-radius: 20px; font-family: 'Montserrat'; font-weight: bold; cursor: pointer; width: 100%;">
-            VOLTAR AO CONVITE
-        </button>
     </div>
 </div>
 
